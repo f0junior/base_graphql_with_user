@@ -1,37 +1,24 @@
-# Comandos para rodar após baixar o projeto
+# Base GraphQL com Usuário
 
-1. Rodar o comando global
-```
-poetry config virtualenvs.in-project true
-```
-2. Remover o ambiente atual (opcional mas recomendado):
-```
-cd backend
-poetry env remove python
-```
-3. Criar a nova venv dentro do projeto:
-```
-poetry install
-```
-Isso vai criar um .venv/ na pasta backend/, bonitinho.
+Este repositório serve como base para criação de APIs GraphQL utilizando as seguintes tecnologias:
 
-✅ Depois disso no VSCode
-Configure o settings.json com caminho relativo:
+- **FastAPI**: Framework web assíncrono e rápido para Python.
+- **Strawberry**: Biblioteca para GraphQL em Python, fácil de usar e tipada.
+- **Pydantic**: Validação e serialização de dados baseada em tipos.
+- **SQLAlchemy**: ORM para manipulação de banco de dados relacional.
+- **Redis**: Armazenamento em memória para controle de sessões.
 
-### Windows:
-```
-{
-  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/Scripts/python.exe"
-}
-```
-### Linux/macOS:
-```
-{
-  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python"
-}
-```
+## Funcionalidades
 
-Ou Pressione `Ctrl + Shift + P`, digite `Python: Select Interpreter`, clique em
-`Enter interpreter path` e coloque o caminho para a pasta conforme indicado acima para os casos **windows** ou **linux/macOS** criada dentro de **backend**
+- Estrutura pronta para API GraphQL.
+- Endpoint para autenticação e acesso de usuário.
+- Controle de sessão de usuário salvo em Redis.
+- Exemplos de mutações e queries para cadastro, login, consulta e atualização de usuário.
 
-E pronto! Portável, limpo, e o Pylance vai parar de fingir que não conhece seus pacotes. 😎
+## Como usar
+
+1. Instale as dependências com [Poetry](https://python-poetry.org/).
+2. Inicie os serviços necessários (Redis, banco de dados).
+3. Execute a aplicação com o script `start.sh`.
+
+Consulte os exemplos de requisições em [example.http](example.http)
