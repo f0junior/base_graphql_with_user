@@ -1,0 +1,19 @@
+# Python
+.pytest_cache
+__pycache__
+.ruff_cache
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+*.egg
+*.log
+
+# Environments
+.venv/
+.env
+.env.development
+
+# Poetry
+poetry.lock

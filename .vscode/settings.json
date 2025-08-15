@@ -1,0 +1,27 @@
+{
+  "python.analysis.typeCheckingMode": "basic",
+  "python.formatting.provider": "ruff",
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "file",
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit",
+    "source.fixAll": "explicit"
+  },
+  "ruff.format": true,
+  "python.linting.enabled": true,
+  "python.linting.ruffEnabled": true,
+  "python.linting.ruffArgs": ["--fix"],
+  "python.testing.pytestEnabled": true,
+  "python.testing.pytestArgs": [
+    "--cov=backend/app",
+    "--cov-report=term-missing",
+    "tests"
+  ],
+  "docker.dockerComposeBuild": true,
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/*.pyc": true
+  },
+  "terminal.integrated.defaultProfile.linux": "bash",
+  "containers.composeBuild": true
+}

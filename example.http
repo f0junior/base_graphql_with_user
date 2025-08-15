@@ -1,0 +1,57 @@
+### Criação de usuário via GraphQL
+POST http://0.0.0.0:10000/graphql
+Content-Type: application/json
+X-Request-Type: GraphQL
+
+mutation CreateUser($data: UserCreateInput!) {
+  createUser(data: $data) {
+    id
+    email
+    name
+  }
+}
+
+{
+  "data": {
+    "email": "user@example.com",
+    "name": "John Doe",
+    "username": "johndoe",
+    "password": "Senh@Segur@123"
+  }
+}
+###
+
+### Login de usuário via GraphQL
+POST http://0.0.0.0:10000/graphql
+Content-Type: application/json
+X-Request-Type: GraphQL
+
+mutation Login($data: UserLoginInput!) {
+  login(data: $data) {
+    name
+    username
+    isMaster
+  }
+}
+
+{
+  "data": {
+    "email": "user@example.com",
+    "password": "Senh@Segur@123"
+  }
+}
+###
+
+### Consulta de usuário via GraphQL
+POST http://0.0.0.0:10000/graphql
+Content-Type: application/json
+X-Request-Type: GraphQL
+Cookie: session=d544321e-8b9a-4264-a777-c4915ef650ec
+
+query {
+  me {
+    name
+    username
+    isMaster
+  }
+}
